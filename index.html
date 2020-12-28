@@ -1,69 +1,210 @@
 <!DOCTYPE html>
 <html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
-<style> 
-    .topnav-right {float: right;}
+<head>
+<style>
+
+a{
+    color: blue
+}
+
+p {
+    line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul li {
+    padding:5px;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 10px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
 </style>
 
-<head>
-<title> Nick Huang </title>
+<title>
+Nick Huang
+</title>
 </head>
-
-<!-- Navigation -->
-<nav class="w3-bar w3-black">
-    <a href="#About_me" class="w3-button w3-bar-item"> About Me </a>
-    <a href="/document/Resume.pdf" class="w3-button w3-bar-item"> Resume </a>
-    <a href="#Teaching" class="w3-button w3-bar-item"> Teaching </a>
-    <a href="#Contact" class="w3-button w3-bar-item">Contact</a>
-    <div class="topnav-right">
-        <a class = "w3-button w3-black" > Nick Huang </a>
-        </div>
-</nav>
-
-
-<!-- Body -->
 <body>
-    <h2 id="About_Me"> <b> About Me </b> </h2>
-        <p> 
-        My name is Nick Huang, and I am currently a fourth-year Mathematics and Its Application in
-        Teaching specialist at the University of Toronto St.George.
+
+
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="document/Resume.pdf">Resume</a>
+  <a style="float:right"> Nick Huang</a>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>Teaching</h2>
+      <p> <i> How to Solve It </i> (G.Polya, 1945) introduced a four-phased method to solve any 
+          mathematical problem. The four phases are understanding the problem, 
+          devising a plan, carrying out the plan, and looking back. I am working
+          to adapt this method when teaching mathematics. "What is the definition?" is the first
+          question I will always ask when looking at a mathematical problem. Learning mathematics 
+          requires the efforts from both the student and the teacher. The teacher will offer paths 
+          to students and keep them highly motivated on the way, but the students should be responsible
+          for their own studies. If you want to see more about my thoughts on the four-phased method, you
+          can check out my <a href = "document/Understanding-Connecting-Proving-Review.pdf">summary essay</a>.
         </p>
-
-    <h2 id="Teaching"> <b> Teaching </b> </h2>
-        Experience being a teaching assistant for the following courses:
-    <ul>
-        <li> <h5> Linear Programming and Optimization MATB61H3_TUT , Winter 2021, 
-                University of Toronto Scarborough </h5> </li>
-
-        <li> <h5> Introduction to Real Analysis <a href="MAT337_Tues2-3_F20.html">
-        MAT337H1 Tuesday 2-3pm Tutorial</a>, Fall 2020, 
-            University of Toronto St.George </h5> </li>
-
-        <li> <h5> Linear Algebra II, <a href="MATB24_TUT0022_F20.html"> 
-            MATB24H3_TUT0022 </a>,
-             Fall 2020, University of Toronto Scarborough  </h5> 
+    </div>
+    <div class="card">
+      <h2>Courses</h2>
+      <h4>Experiences being a teaching assistant for the following courses</h4>
+      <ul>
+        <li>
+            Linear Programming and Optimization MATB61H3_TUT , Winter 2021, University of Toronto Scarborough
         </li>
-            
-        <li> <h5> Differential Equation I, <a href="MATB44_TUT0005_F20.html"> 
-            MATB44H3_TUT0005 </a>, Fall 2020, 
-            University of Toronto Scarborough </h5> </li>
-        <li> <h5> Calculus II, <a href="MAT235_TUT0401_F19_W20.html"> MAT235Y1_TUT0401</a>, Fall 2019 - Winter 2020, 
-            University of Toronto St.George  </h5> </li>
-    </ul>
-    <h2 id="Contact"> <b> Contact </b> </h1>
-        <p> 
-        You may contact me by mailling nicky.huang@mail.utoronto.ca
-        </p>
-    
+
+        <li>
+            Introduction to Real Analysis MAT337H1 Tuesday 2-3pm Tutorial, Fall 2020, University of Toronto St.George
+            <a href = "MAT337_Tues2-3_F20.html">
+                Resources
+            </a>
+        </li>
+
+        <li>
+            Linear Algebra II, MATB24H3_TUT0022 , Fall 2020, University of Toronto Scarborough
+            <a href = "MATB24_TUT0022_F20.html">
+                Resources
+            </a>
+        </li>
+
+        <li>
+            Differential Equation I, MATB44H3_TUT0005 , Fall 2020, University of Toronto Scarborough
+            <a href = "MATB44_TUT0005_F20.html">
+                Resources
+            </a>
+        </li>
+
+        <li>
+            Calculus II, MAT235Y1_TUT0401, Fall 2019 - Winter 2020, University of Toronto St.George
+            <a href = "MAT235_TUT0401_F19_W20.html">
+                Resources
+            </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+      
+      <p>My name is Nick Huang, and I am currently a 
+          fourth-year Mathematics and Its Application in Teaching specialist at the University of Toronto St.George.</p>
+    </div>
+
+    <div class="card">
+      <h3>Contact</h3>
+      <p> Please let me know if you have any suggestions or have found typo in any of the resources. I
+          will fix it as soon as possible. You may contact me by mailling nicky.huang@mail.utoronto.ca</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h3>"Go down deep enough into anything and you will find mathematics."</h3>
+</div>
+
 </body>
-
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
-
-</footer>
-
-
 </html>

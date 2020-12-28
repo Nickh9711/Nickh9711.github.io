@@ -4,22 +4,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
 <style> 
-    .topnav-right {float: right;}
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+    /* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
 </style>
 <head>
 <title> MAT337 Tuesday 2-3pm Tutorial, Fall 2020 </title>
 </head>
 
 <!-- Navigation -->
-<nav class="w3-bar w3-black">
-    <a href="index.html" class="w3-button w3-bar-item"> About Me </a>
-    <a href="/document/Resume.pdf" class="w3-button w3-bar-item"> Resume </a>
-    <a href="index.html" class="w3-button w3-bar-item"> Teaching </a>
-    <a href="index.html" class="w3-button w3-bar-item">Contact</a>
-    <div class="topnav-right">
-        <a class = "w3-button w3-black" > Nick Huang </a>
-        </div>
-</nav>
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="document/Resume.pdf">Resume</a>
+  <a style="float:right"> Nick Huang</a>
+</div>
+
 
 
 
