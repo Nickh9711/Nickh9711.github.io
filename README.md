@@ -1,1 +1,1 @@
-[Personal Website](nickh9711.github.io)
+[Personal Website](https://nickh9711.github.io/)
