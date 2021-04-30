@@ -141,6 +141,25 @@ body {
   }
 }
 
+.collapsible {
+  color: green;
+  background-color: #ffffff00;
+  cursor: pointer;
+  padding: 0px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
 </style>
 
 <title>
@@ -238,6 +257,30 @@ Nick Huang
               <li>
                 Mathematics education research in progress. Supervised by Prof. Camelia Karimian Pour and Prof. Sohee Kang
               </li>
+              <li>
+                <button type="button" class="collapsible"> <u> Description of the Project </u></button>
+                  <div class="content">
+                    <p>
+                      “Linear algebra is so much different from the math that I have learned in high school.” 
+                      This is a sentence that was said by many university students in their first years. Previous 
+                      studies have shown that understanding concepts, use of suitable notations in 
+                      communicating ideas and attitude towards mathematics are major factors that contribute 
+                      to learning linear algebra. In our study, quantitative and qualitative research is conducted 
+                      on a class of first year students taking linear algebra at the University of Toronto, 
+                      Scarborough in order to investigate the impact of mastery in reciting definitions, and the 
+                      ability to identify and come up examples and counter examples for a particular concept
+                      in students’ ability to communicate in mathematics. It is not surprising that significant 
+                      correlations have been found between understanding definition and writing a proof in 
+                      linear algebra. However, the story turns out to be more complicated and there are 
+                      multiple factors with different levels of impact in the students’ performance. Overall, even
+                      though our study supports definition focus approaches to linear algebra, it suggests that 
+                      focusing on multiple representations on concepts can further improve students learning. 
+                      In this talk, I will share the methodology and findings of our study. This talk is targeted to 
+                      anyone with an interest in math education, especially first year instructors, and graduate 
+                      students with TA responsibility can benefit from our findings.
+                    </p>
+                  </div>
+              </li>
           </ul>
         </li>
 
@@ -307,5 +350,24 @@ Nick Huang
   <h3>"Go down deep enough into anything and you will find mathematics."</h3>
 </div>
 
+
+
+
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+  </script>
 </body>
 </html>
