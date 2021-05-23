@@ -1,0 +1,180 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath} %Introduced in section 3
+\usepackage{amsfonts} %Introduced in section 3.1
+\usepackage{hyperref} %Optional, in section 3.3
+\usepackage{xcolor} %Optional, in section 3.3
+\newcommand{\Sum}{\displaystyle\sum} %Introduced in section 3.4.1
+\usepackage{amsthm} %Introduced in section 3.4.2
+
+\title{LaTeX Seminar for MATB24 TUT5}
+\author{Nick Huang}
+
+% This is a comment and will not appear on the actual pdf file.
+
+% \date{} 
+
+%The \date{} comment will hide the date, if you want the date automatically generate, simply cancel (or comment like above) the \date{} code, and it will give you the current date
+
+\begin{document} %This is when the document starts
+
+\maketitle %Make title with the info you provided above
+
+\section{LaTeX is useful when typing mathematics!}
+\subsection{This is a subsection under this section}
+\subsection*{I don't like the label!}
+\subsubsection{This is a subsubsection!}
+
+This helps you make everything organized.
+
+This is amazing! Wait, why is there an indentation?
+
+\setlength\parindent{0pt}
+
+This looks better now! However, keep in mind that the following make no differences even if you indent in your TeX code:
+
+Hi, this is the first one.
+
+    Hi, this is the first one.
+
+\section{Make a list instead of a paragraph}
+
+Instead of writing a paragraph, you can make a list as follows.
+
+    \begin{itemize}
+        \item Hi!
+        \item This looks much better now!
+    \end{itemize}
+    
+    Oh! This is not in the list.
+    
+    \begin{enumerate}
+        \item Here is another way to make a list
+            \begin{enumerate}
+                \item Similar to the idea of subsection.
+                \item This is why indentation in your TeX code is helpful, so that you do not easily get confused
+            \end{enumerate}
+    \end{enumerate}
+
+\section{Typing in math mode}
+How should we type in math? For example, if we want to type the equation 1+1=2 and f(x)=x?
+
+No, it should be $1+1=2$ and $f(x) = x$. Math should be typed under the math mode with the dollar signs. However, be careful if you type non-math under math mode. For example,
+
+\begin{itemize}
+    \item $I like linear algebra and 1+1=2 is easy!$. This does not look good!
+    \item You should write it as: I like linear algebra and $1+1=2$ is easy! 
+    \item With the amsmath package, $\text{I like linear algebra and } 1+1=2 \text{ is easy!}$
+\end{itemize}
+
+Besides, you can also do the following
+
+$$
+1+1=2 \text{ is important!}
+$$
+
+instead of $1+1=2 \text{ is important!}$
+
+\subsection{amsfonts package is very useful!}
+Remember, R is not representing the set of all real numbers! $R$ is also not what we wanted. The correct form should be $\mathbb{R}$ with the amsfonts package. Similarly, we have seen $\mathbb{C}, \mathbb{Q}$. Here is something fancy we can type with the package, $\mathbb{P}_n(\mathbb{R})$ which is the set of all polynomial with degree at most n and coefficients in $\mathbb{R}$.
+
+\subsection{subscript and superscript}
+Remember as we have seen in linear algebra, we have often used subscript and superscript when writing math. Similarly, we can do it in LaTeX. For example,
+$a_1$ and $a_{1}$ are representing the same things, but $a_r+1$ and $a_{r+1}$ is different, because the brackets tell LaTeX that $r+1$ is the subscript.
+
+Similarly, $a^2$ and $a^{2}$ are representing the same things, but $a^r+1$ and $a^{r+1}$ are different! Together, we can have something fancy now $a_{i}^{k+1}$ or more careful $(a_{i})^{k+1}$.
+
+Notice ${1}$ is the same as $1$. So to type the brackets in LaTeX, you need to do the following: $\{1\}$. The backslash tells LaTeX that that is not a command, it is just a symbol!
+
+\subsection{Example: Definition of linearly independent}
+
+Let $S = \{ v_1, \cdots, v_n \}$ be a set of vectors in the vector space $V$, we say that $S$ is linearly independent if
+$$
+a_1 v_1 + \cdots + a_n v_n = 0 \text{ for some } a_1, \cdots, a_n \in \mathbb{F}
+\implies
+a_1 = \cdots = a_n = 0
+$$
+This looks great! If you are unsure about what LaTeX code should be for a given symbol, search online!
+\href{https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols}
+{
+{\color{blue}Here is the link.}
+}
+
+\subsection{Another example: Proof}
+\subsubsection{Before the example}
+Notice that we can type the summation in LaTeX like this $\sum_{i=1}^{n} a_i v_i$. But this is different from what we expected. We expected the following.
+
+$$
+\sum_{i=1}^{n} a_i v_i
+$$
+
+This is because of the different display styles in a paragraph or as an equation. We can fix it as follow: $\displaystyle\sum_{i=1}^{n} a_i v_i$ is what we wanted!
+
+However, it might be annoying to keep using that displaystyle command many times during the proof. We can define a new command to save us some times.
+
+Once we define the new command, this is what we wanted $\Sum_{i=1}^{n} a_i v_i$
+
+\subsubsection{Now the example}
+A set of vectors $\{ v_1, \cdots, v_n\}$ in $V$ is linearly dependent, if at least one of those vectors can be written as a linear combination of the other vectors. Prove that if a set is linearly dependent by the original definition, then it is linearly dependent by this equivalent definition.
+
+This is a similar question to what we have seen in the tutorial. Let's try to prove it together!
+
+\begin{proof} %With the amsthm package
+Let $S = \{ v_1, \cdots, v_n\}$ be a set of vectors in $V$.
+
+WTS: If $S$ is linearly dependent by the original definition, then it is linearly dependent by the equivalent definition.
+
+Assume $S$ is linearly dependent by the original definition, that is
+$$
+a_1 v_1 + \cdots + a_n v_n = 0 \text{ for some } a_1, \cdots, a_n \in \mathbb{F}
+$$
+and $\exists i \in \{ 1, \cdots, n \}$, such that $a_i \neq 0$.
+
+Therefore,
+\begin{align} %This is helpful when we want to do some computations within this, it is already in math mode, so you don't have to type $$.
+    a_i v_i =& - \Sum_{j=1, j \neq i}^{n} a_j v_j \\ 
+            =& \Sum_{j=1, j \neq i}^{n} (-a_j) v_j
+%The & tells LaTeX when to align, the \\ tells LaTeX that we will have another line
+\end{align}
+
+%If you don't like the label besides each equation, you can use \begin{align*} instead.
+
+Since $a_i \neq 0$, $a_i^{-1}$ exists in $\mathbb{F}$. Therefore, 
+$v_i = \Sum_{j=1, j \neq i}^{n} (-a_j a_i^{-1}) v_j$ by equation (2) above, which is a linear combination of $v_1, \cdots, v_{i-1}, v_{i+1}, \cdots, v_n$. Therefore $v_i$ is a linear combination of the others, and hence $S$ is linearly independent.
+
+\end{proof}
+
+\subsection{Matrices}
+
+Matrices can be typed using LaTeX as follow with the amsmath package. Remember it has to be in the math mode. For example,
+$
+\begin{pmatrix}
+x_1 \\ x_2 \\ x_3
+\end{pmatrix}
+$
+gives a $3 \times 1$ matrix, and
+$
+\begin{pmatrix}
+x_{11} & x_{12} \\ x_{21} & x_{22} \\ x_{31} & x_{33}
+\end{pmatrix}
+$
+gives a $3 \times 2$ matrix.
+
+
+\section{More examples}
+
+Remember, every vector space is equipped with two operations $+$ and $\cdot$. In the definitions, there are quantifiers for-all $\forall$ and there-exists $\exists$. 
+
+Besides, we have seen the followings in set theory:
+\begin{itemize}
+    \item The empty set $\emptyset$
+    \item Subset $\subseteq$ and proper subset $\subset$
+    \item Belongs to $\in$ and not belongs to $\notin$
+    \item Intersection $\cap$
+    \item Union $\cup$
+\end{itemize}
+
+Lastly, we have seen some Greek alphabets, such as $\alpha, \beta, \delta, \phi, \psi$.
+
+
+\end{document} %This is when the document ends
